@@ -17,6 +17,16 @@ body {
   font-size: 11px;
 }
 
+.container2 .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.container2 .active:hover {
+  text-decoration: none;
+}
+
 .h1 .container .row {
   font-family: "Dancing Script", cursive;
   font-family: "Poppins", sans-serif;

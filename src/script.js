@@ -53,12 +53,20 @@ function convertToCelsius(response) {
   heading.innerHTML = `${temperature}`;
 }
 
-//change temperature//
+//change temperature to Farhenheit//
 function convertToFahren(event) {
   event.preventDefault();
   let fahrenTemperature = document.querySelector("#main-temperature");
   let fahrenTemperatureConvert = Math.round((mainTemperature * 9) / 5 + 32);
   fahrenTemperature.innerHTML = `${fahrenTemperatureConvert}`;
+}
+
+// Convert back to Celsius//
+function convertBackToCelsius(event) {
+  event.preventDefault();
+  let celsiusTemperature = Math.round(mainTemperature);
+  let heading = document.querySelector("#main-temperature");
+  heading.innerHTML = `${celsiusTemperature}`;
 }
 
 function retrievePosition(position) {
@@ -114,6 +122,9 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 let fahrenLink = document.querySelector("#fahren-link");
 fahrenLink.addEventListener("click", convertToFahren);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertBackToCelsius);
 
 let mainTemperature = null;
 
