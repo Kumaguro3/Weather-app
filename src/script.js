@@ -1,9 +1,10 @@
 //Display weather description//
+
 function displayWeatherCondition(response) {
   document.querySelector("#main-city").innerHTML = response.data.name;
-  document.querySelector("#main-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  mainTemperature = response.data.main.temp;
+  document.querySelector("#main-temperature").innerHTML =
+    Math.round(mainTemperature);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -52,6 +53,14 @@ function convertToCelsius(response) {
   heading.innerHTML = `${temperature}`;
 }
 
+//change temperature//
+function convertToFahren(event) {
+  event.preventDefault();
+  let fahrenTemperature = document.querySelector("#main-temperature");
+  let fahrenTemperatureConvert = Math.round((mainTemperature * 9) / 5 + 32);
+  fahrenTemperature.innerHTML = `${fahrenTemperatureConvert}`;
+}
+
 function retrievePosition(position) {
   console.log(position.coords.latitude);
   ("");
@@ -59,14 +68,6 @@ function retrievePosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(convertToCelsius);
-}
-
-//change temperature//
-function convertToFahren(event) {
-  event.preventDefault();
-  let fahrenTemperature = document.querySelector("#main-temperature");
-  let fahrenTemperatureConvert = Math.round((19 * 9) / 5 + 32);
-  fahrenTemperature.innerHTML = `${fahrenTemperatureConvert}`;
 }
 
 navigator.geolocation.getCurrentPosition(retrievePosition);
@@ -110,3 +111,10 @@ form.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let fahrenLink = document.querySelector("#fahren-link");
+fahrenLink.addEventListener("click", convertToFahren);
+
+let mainTemperature = null;
+
+searchCity("Tokyo");
