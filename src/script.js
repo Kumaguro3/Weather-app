@@ -57,6 +57,10 @@ function convertToCelsius(response) {
 function convertToFahren(event) {
   event.preventDefault();
   let fahrenTemperature = document.querySelector("#main-temperature");
+  // remove the active Celsius link when click on Farhenheit//
+  celsiusLink.classList.remove("active");
+  // add the active on Celsius //
+  fahrenLink.classList.add("active");
   let fahrenTemperatureConvert = Math.round((mainTemperature * 9) / 5 + 32);
   fahrenTemperature.innerHTML = `${fahrenTemperatureConvert}`;
 }
@@ -64,6 +68,8 @@ function convertToFahren(event) {
 // Convert back to Celsius//
 function convertBackToCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenLink.classList.remove("active");
   let celsiusTemperature = Math.round(mainTemperature);
   let heading = document.querySelector("#main-temperature");
   heading.innerHTML = `${celsiusTemperature}`;
