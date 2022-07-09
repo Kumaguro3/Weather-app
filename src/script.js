@@ -108,6 +108,29 @@ let days = [
 
 let day = days[now.getDay()];
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tue", "Wed", "Thur", "Frid", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col">
+            <div class="row weekDay">${day}</div>
+            <div class="row row2">
+              <img src="images/sun.png" id="icon" alt="">
+            </div>
+            <div class="row row3">21&deg;</div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // querySelector time //
 
 let time = document.querySelector(".time");
