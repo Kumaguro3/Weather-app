@@ -15,21 +15,22 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap"
       rel="stylesheet"
-    /> 
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/style.css" /> 
+    <link rel="stylesheet" href="src/style.css" />
 
     <title>Weather app</title>
   </head>
   <body>
-    
     <div class="container">
       <!-- Enter city tool-->
       <form id="search-form">
         <input type="text" placeholder="Enter a city" id="search-text-input" />
         <button type="submit" class="btn btn-primary">Go!</button>
       </form>
-      <button type="click" class="btn btn-primary" id="current-location"> Current Location </button>
+      <button type="click" class="btn btn-primary" id="current-location">
+        Current Location
+      </button>
 
       <!-- Main city & temperature -->
 
@@ -37,41 +38,39 @@
       <h4 class="dayOfWeek">Monday</h4>
       <h4 class="time">10:00</h4>
 
-
       <!-- Main weather image -->
-      <img src="images/sunimg.png" alt="clear"
-        id="icon">
-    </br>
-    <div class="container2">
-      <h3 class="temperature" id="main-temperature">19</h3>
-      <a href="#" id="celsius-link" class="active">°C</a> |
-      <a href="#" id="fahren-link">°F</a>
-    </div>
+      <img src="images/sunimg.png" alt="clear" id="icon" />
+      <br />
+      <div class="container2">
+        <h3 class="temperature" id="main-temperature">19</h3>
+        <a href="#" id="celsius-link" class="active">°C</a> |
+        <a href="#" id="fahren-link">°F</a>
+      </div>
     </div>
 
     <!-- Left panel-->
     <div class="container">
-
       <div class="description">
         <h4 id="description">Clear</h4>
       </div>
 
-        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
-          <h6 class="humidity">Humidity: <spam id="humidity">60</spam>%
-          </h6>
-        </div>
-
-        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
-          <h6 class="wind">Wind: <spam id="wind">5</spam>km/h
-          </h6>
-        </div>
+      <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+        <h6 class="humidity">Humidity: <spam id="humidity">60</spam>%</h6>
       </div>
 
-      <!-- 5 days forecast -->
-      <div class="container" id="forecast"> 
+      <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+        <h6 class="wind">Wind: <spam id="wind">5</spam>km/h</h6>
+      </div>
     </div>
+
+    <!-- 5 days forecast -->
+    <div class="container" id="forecast"></div>
 
     <script src="src/script.js"></script>
   </body>
-   <p class="linkgit">App created by<a href="https://github.com/Kumaguro3/Weather-app" > Julie Sergent</a></p>
+  <p class="linkgit">
+    App created by<a href="https://github.com/Kumaguro3/Weather-app">
+      Julie Sergent</a
+    >
+  </p>
 </html>

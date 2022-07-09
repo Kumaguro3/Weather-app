@@ -158,3 +158,4 @@ celsiusLink.addEventListener("click", convertBackToCelsius);
 let mainTemperature = null;
 
 searchCity("Tokyo");
+displayForecast();
