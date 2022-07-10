@@ -1,10 +1,19 @@
 body {
   padding: 15px;
-  max-width: 320px;
+  min-width: 320px;
+  max-width: 400px;
   max-height: 800px;
   margin: 30px auto;
   border: 2px solid rgb(213, 213, 213);
   border-radius: 10px;
+}
+
+.btn-group button {
+  border: 2px solid white;
+  border-radius: 10 10 10 10;
+  padding: 10px auto;
+  color: white;
+  cursor: pointer;
 }
 
 .main-weatherimage {
@@ -63,4 +72,7 @@ h3 {
 }
 .linkgit {
   text-align: center;
+}
+.weather-forecast-temperature-min {
+  color: gray;
 }
